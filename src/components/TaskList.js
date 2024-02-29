@@ -7,7 +7,7 @@ import DoneTodoFilters from "./DoneToDoFilters"
 export default function TaskList() {
 
     const tasks = useContext(TasksContext)
-    const [filtered, setFiltered] = useState(tasks)
+    const [filtered, setFiltered] = useState([])
     const [filter, setFilter] = useState("asc")
     const [category, setCategory] = useState("all")
 
@@ -73,21 +73,18 @@ export default function TaskList() {
             case "all" : {
                 
                 setFiltered(tasks)
-                filterTasks()
                 break
             }
 
             case "done" : {
 
                 setFiltered(tasks.filter( task => task.done !== false))
-                filterTasks()
                 break
             }
 
             case "to-do" : {
 
                 setFiltered(tasks.filter( task => task.done === false))
-                filterTasks()
                 break
             }
 
