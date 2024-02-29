@@ -1,0 +1,394 @@
+html {
+  
+  font-size: 15px;
+  color: black;
+  background-color: white;
+}
+
+* {
+
+  box-sizing: border-box;
+}
+
+body {
+
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: burlywood;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: unset;
+  flex-direction: column;
+}
+
+/* erase default styles */
+
+button {
+
+  font-family: inherit;
+  background: unset;
+  color: inherit;
+  border: none;
+}
+
+input {
+  
+  outline: none;
+  border: none;
+}
+
+select {
+
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+}
+
+figure {
+
+  margin: 0;
+}
+
+a {
+
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+
+  object-fit: contain;
+}
+
+select {
+
+  appearance: none;
+  outline: 10px black;
+  border: 0;
+  box-shadow: none;
+}
+
+ul {
+
+  padding: 0;
+  margin: 0;
+}
+
+li {
+
+  list-style-type: none;
+}
+
+/* usefull classes */
+
+.container {
+
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+
+  /* center element */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* AddTaskBar's Section */
+
+.new-task {
+
+  width: 90%;
+  max-width: 450px;
+  margin: 2vh auto;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.input-task {
+
+  height: 4vh;
+  width: 40%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: 3px solid rgba(231, 112, 69, 0);
+}
+
+.input-task:focus {
+
+  border: 3px solid rgba(231, 112, 69, 1);
+}
+
+.select {
+
+  position: relative;
+  display: flex;
+  width: 30%;
+  height: 4vh;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.select::after {
+
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .5em;
+  color: whitesmoke;
+  background-color: rgba(231, 112, 69, 1);
+  pointer-events: none;
+}
+
+.select:hover::after {
+
+  color: rgb(138, 138, 138);
+}
+
+select {
+
+  flex: 1;
+  padding: 0 1em;
+  color: whitesmoke;
+  background-color: rgb(231, 92, 42);
+  background-image: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  
+  display: none;
+}
+
+.add-task {
+
+  width: 20%;
+  padding: .75vh 5px;
+  border-radius: 5px;
+  border: 2px solid rgba(231, 112, 69, 1);
+  color: rgba(231, 112, 69, 1);
+}
+
+.add-task:hover, .add-task:active {
+
+  background-color: rgba(231, 112, 69, 1);
+  color: whitesmoke;
+}
+
+/* Filters' section */
+
+.filters {
+
+  width: 100%;
+
+  /* center element */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.filter {
+
+  width: 10%;
+  height: 4vh;
+  padding: 0 1em;
+  border-radius: 5px;
+  background-color: unset;
+  border: 2px solid rgba(231, 112, 69, 1);
+  color: rgba(231, 112, 69, 1);
+  background-image: none;
+  cursor: pointer;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 450px) {
+
+    width: 25%;
+  }
+}
+
+.up::after {
+
+  content: '\25BC';
+  rotate: 180deg;
+}
+
+.down::after {
+
+  content: '\25BC';
+}
+
+.active {
+
+  background-color: rgba(231, 112, 69, 1);
+  color: whitesmoke;
+}
+
+/* List's section */
+
+.to-do-list {
+
+  width: 100%;
+  max-height: 70vh;
+  margin: 2vh auto;
+  border-radius: 5px;
+  overflow: scroll;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  /* center element */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (max-width: 1100px) {
+
+    border-radius: 0;
+  }
+}
+
+.to-do-list::-webkit-scrollbar {
+
+  display: none;
+}
+
+li {
+
+  width: 100%;
+}
+
+.task {
+
+  width: 100%;
+  padding: .75vh 25px;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 1100px) {
+
+    padding: .75vh 10px;
+  }
+}
+
+.hot {
+
+  background-color: maroon;
+}
+
+.medium {
+
+  background-color: rgba(231, 112, 69, 1);
+}
+
+.low {
+
+  background-color: aquamarine;
+}
+
+.informations-task {
+
+  width: 70%;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 1100px) {
+
+    width: 65%;
+    flex-direction: column;
+  }
+}
+
+.update-text {
+
+  width: 65%;
+  border-radius: 5px;
+  height: 4vh;
+
+  @media screen and (max-width: 1100px) {
+
+    width: 100%;
+    margin: 0 auto 10px auto;
+  }
+}
+
+.update-velocity {
+
+  width: 30%;
+
+  @media screen and (max-width: 1100px) {
+
+    width: 50%;
+  }
+}
+
+.actions-task {
+
+  width: 20%;
+
+  /* center element */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 1100px) {
+
+    width: 25%;
+    flex-direction: column;
+  }
+}
+
+.action {
+
+  padding: .75vh 15px;
+  border-radius: 5px;
+  border: 2px solid rgb(42, 141, 47);
+  color: rgb(42, 141, 47);
+
+  @media screen and (max-width: 1100px) {
+
+    margin: 5px auto;
+  }
+}
+
+.action:hover, .action:active {
+
+  background-color: rgb(42, 141, 47);
+  color: whitesmoke;
+}
+
+.remove {
+
+  border: 2px solid rgb(236, 48, 48);
+  color: rgb(236, 48, 48);
+}
+
+.remove:hover, .remove:active {
+
+  background-color: rgb(236, 48, 48);
+  color: whitesmoke;
+}
